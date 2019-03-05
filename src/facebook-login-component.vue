@@ -25,7 +25,7 @@
 
         function sendToken(token) {
           var xhr = new XMLHttpRequest();
-          xhr.open('POST', window.facebookAuthUrl);
+          xhr.open('POST', window.loginUrlForFacebookToken);
           xhr.setRequestHeader('Content-Type', 'application/json');
           xhr.onload = function() {
             if (xhr.status === 200) {
