@@ -52,15 +52,15 @@
       v-pre
       size="large"
       scope="public_profile,email"
-      onlogin="checkLoginState();">
+      onlogin="attemptLogin();">
       Sign in with Facebook
     </fb:login-button>
 
     <script type="application/javascript">
-      function checkLoginState() {
-        FB.getLoginStatus(function(response) {
+      function attemptLogin() {
+        FB.login(function(response) {
           window.statusChangeCallback(response);
-        });
+        }, {scope: "email"});
       }
     </script>
   </div>
